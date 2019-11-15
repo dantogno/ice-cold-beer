@@ -23,7 +23,10 @@ public class MovingRampSupport : MonoBehaviour
     // physics stuff.
     private void FixedUpdate()
     {
-        rigidbody.velocity = new Vector2(0, verticalInput * moveSpeed);
+        if (!GameOver.IsGameOver)
+        {
+            rigidbody.velocity = new Vector2(0, verticalInput * moveSpeed);
+        }
     }
 
 }
